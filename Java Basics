@@ -1,2 +1,81 @@
 1. How to create a class, object, method and its signature 
+
+class MyClass {
+    void greet() {
+        System.out.println("Hello from MyClass!");
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.greet();
+    }
+}
+
  
+2. Write a program to print your name. 
+
+public class PrintName {
+    public static void main(String[] args) {
+        System.out.println("Kartheek Dama");
+    }
+}
+
+ 
+3. Write a program for a Single line comment, multi-line and documentation comments 
+
+public class CommentsDemo {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        System.out.println("Multi-line comment example.");
+    }
+}
+
+ 
+4.  Define variables for different Data Types int, Boolean, char, float, double and print on the Console
+
+public class DataTypesDemo {
+    public static void main(String[] args) {
+        int number = 10;
+        boolean isTrue = true;
+        char letter = 'A';
+        float floatValue = 3.14f;
+        double doubleValue = 99.99;
+
+        System.out.println("Integer: " + number);
+        System.out.println("Boolean: " + isTrue);
+        System.out.println("Character: " + letter);
+        System.out.println("Float: " + floatValue);
+        System.out.println("Double: " + doubleValue);
+    }
+}
+
+
+5. Define the local and Global variables with the same name and print both variables and understand the scope of the variables .
+
+public class VariableScope {
+    int value = 100;
+
+    void show() {
+        int value = 50;
+        System.out.println("Local value: " + value);
+        System.out.println("Global value: " + this.value);
+    }
+
+    public static void main(String[] args) {
+        VariableScope obj = new VariableScope();
+        obj.show();
+    }
+}
+
+ 
+6. Write a function to print your name and call the function from main method
+
+public class PrintMyName {
+    static void printName() {
+        System.out.println("Kartheek Dama");
+    }
+
+    public static void main(String[] args) {
+        printName();
+    }
+}
