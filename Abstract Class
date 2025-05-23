@@ -1,0 +1,76 @@
+1. Create an abstract class with abstract and non-abstract methods. 
+
+abstract class Vehicle {
+    abstract void startEngine();
+    void stopEngine() {
+        System.out.println("Engine stopped.");
+    }
+}
+
+2. Create a sub class for an abstract class. Create an object in the child class for the abstract class and access the non-abstract methods 
+
+class Car extends Vehicle {
+    @Override
+    void startEngine() {
+        System.out.println("Car engine started.");
+    }
+void accessNonAbstractMethods() {
+        Vehicle vehicle = this;
+        vehicle.stopEngine();
+    }
+}
+ 
+3. Create an instance for the child class in child class and call abstract methods 
+
+abstract class Vehicle {
+    abstract void startEngine();
+    void stopEngine() {
+        System.out.println("Engine stopped.");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void startEngine() {
+        System.out.println("Car engine started.");
+    }
+
+    void callAbstractMethodFromChild() {
+        Car car = new Car();  
+        car.startEngine();    
+}
+
+class CarDemo {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.callAbstractMethodFromChild();
+    }
+}
+
+ 
+4. Create an instance for the child class in child class and call non-abstract methods
+abstract class Vehicle {
+    abstract void startEngine();
+    void stopEngine() {
+        System.out.println("Engine stopped.");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void startEngine() {
+        System.out.println("Car engine started.");
+    }
+
+    void callNonAbstractMethodFromChild() {
+        Car car = new Car();  
+        car.stopEngine();     
+    }
+}
+
+class CarDemo {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.callNonAbstractMethodFromChild();
+    }
+}
