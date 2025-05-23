@@ -1,0 +1,75 @@
+1. Write two methods with the same name but different number of parameters of same type and call the methods from main method 
+
+class Example1 {
+    void print(int a) {
+        System.out.println("One parameter: " + a);
+    }
+
+    void print(int a, int b) {
+        System.out.println("Two parameters: " + a + ", " + b);
+    }
+
+    public static void main(String[] args) {
+        Example1 obj = new Example1();
+        obj.print(10);
+        obj.print(20, 30);
+    }
+}
+
+2. Write two methods with the same name but different number of parameters of different data type and call the methods from main method 
+
+class Example2 {
+    void show(int a) {
+        System.out.println("int: " + a);
+    }
+
+    void show(String s, double d) {
+        System.out.println("String and double: " + s + ", " + d);
+    }
+
+    public static void main(String[] args) {
+        Example2 obj = new Example2();
+        obj.show(10);
+        obj.show("Hello", 3.14);
+    }
+}
+
+3. Write two methods with the same name and same number of parameters of same type and call from main method 
+
+Ans: Not allowed with different implementation only — leads to duplicate method error.
+
+4. Write two methods with the same name and same number of parameters of different type and call from main method 
+ 
+ class Example4 {
+    void sum(int a, int b) {
+        System.out.println("int sum: " + (a + b));
+    }
+
+    void sum(double a, double b) {
+        System.out.println("double sum: " + (a + b));
+    }
+
+    public static void main(String[] args) {
+        Example4 obj = new Example4();
+        obj.sum(10, 20);         // int version
+        obj.sum(10.5, 20.3);     // double version
+    }
+}
+
+5. Write two methods with the same name, number of parameters and data type but different return Type 
+
+class Example5 {
+    int getValue(int a) {
+        return a * 10;
+    }
+
+    String getValue(String s) {
+        return "Hello " + s;
+    }
+
+    public static void main(String[] args) {
+        Example5 obj = new Example5();
+        System.out.println(obj.getValue(5));
+        System.out.println(obj.getValue("World"));
+    }
+}
