@@ -1,0 +1,154 @@
+1. Different ways creating a string 
+
+public class Q1 {
+    public static void main(String[] args) {
+        String s1 = "Hello";
+        String s2 = new String("World");
+        char[] chars = {'J', 'a', 'v', 'a'};
+        String s3 = new String(chars);
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+    }
+}
+
+ 
+2. Concatenating two strings using + operator 
+
+public class Q2 {
+    public static void main(String[] args) {
+        String a = "Hello ";
+        String b = "World";
+        String c = a + b;
+        System.out.println(c);
+    }
+}
+
+ 
+3. Finding the length of the string 
+
+public class Q3 {
+    public static void main(String[] args) {
+        String s = "Hello World";
+        System.out.println(s.length());
+    }
+}
+
+ 
+4. Extract a string using Substring 
+
+public class Q4 {
+    public static void main(String[] args) {
+        String s = "Hello World";
+        System.out.println(s.substring(0, 5));
+    }
+}
+
+5. Searching in strings using indexOf() 
+
+public class Q5 {
+    public static void main(String[] args) {
+        String s = "Hello World";
+        System.out.println(s.indexOf("World"));
+    }
+}
+
+ 
+6. Matching a String Against a Regular Expression With matches() 
+
+public class Q6 {
+    public static void main(String[] args) {
+        String s = "abc123";
+        System.out.println(s.matches("[a-z]+\\d+"));
+    }
+}
+
+ 
+7. Comparing strings using the methods equals(),  
+
+public class Q7 {
+    public static void main(String[] args) {
+        String a = "Hello";
+        String b = "Hello";
+        System.out.println(a.equals(b));
+    }
+}
+
+ 
+8. equalsIgnoreCase(), startsWith(), endsWith() and compareTo() 
+
+public class Q8 {
+    public static void main(String[] args) {
+        String a = "Hello";
+        String b = "hello";
+        System.out.println(a.equalsIgnoreCase(b));
+        System.out.println(a.startsWith("He"));
+        System.out.println(a.endsWith("lo"));
+        System.out.println(a.compareTo("World"));
+    }
+}
+
+ 
+9. Trimming strings with trim() 
+
+public class Q9 {
+    public static void main(String[] args) {
+        String s = "   Hello World   ";
+        System.out.println(s.trim());
+    }
+}
+
+ 
+10. Replacing characters in strings with replace() 
+
+public class Q10 {
+    public static void main(String[] args) {
+        String s = "Java";
+        System.out.println(s.replace('a', 'o'));
+    }
+}
+
+ 
+11. Splitting strings with split() 
+
+public class Q11 {
+    public static void main(String[] args) {
+        String s = "apple,banana,grape";
+        String[] arr = s.split(",");
+        for (String fruit : arr) {
+            System.out.println(fruit);
+        }
+    }
+}
+
+12. Converting Numbers to Strings with valueOf() 
+
+public class Q12 {
+    public static void main(String[] args) {
+        int x = 100;
+        String s = String.valueOf(x);
+        System.out.println(s);
+    }
+}
+
+ 
+13. Converting integer objects to Strings 
+
+public class Q13 {
+    public static void main(String[] args) {
+        Integer x = 200;
+        String s = x.toString();
+        System.out.println(s);
+    }
+}
+
+ 
+14. Converting to uppercase and lowercase 
+
+public class Q14 {
+    public static void main(String[] args) {
+        String s = "Java";
+        System.out.println(s.toUpperCase());
+        System.out.println(s.toLowerCase());
+    }
+}
