@@ -1,0 +1,177 @@
+1. Write a program to generate Arithmetic Exception without exception handling 
+
+class A1 {
+    public static void main(String[] args) {
+        int x = 10 / 0; // ArithmeticException
+    }
+}
+ 
+2. Handle the Arithmetic exception using try-catch block 
+
+class A2 {
+    public static void main(String[] args) {
+        try {
+            int x = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Caught: " + e);
+        }
+    }
+}
+ 
+3. Write a method which throws exception, Call that method in main class without try block 
+
+class A3 {
+    static void throwException() throws ArithmeticException {
+        throw new ArithmeticException("Exception from method");
+    }
+
+    public static void main(String[] args) throws ArithmeticException {
+        throwException();
+    }
+}
+ 
+4. Write a program with multiple catch blocks 
+
+class A4 {
+    public static void main(String[] args) {
+        try {
+            int[] a = new int[2];
+            a[5] = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index Out of Bounds Exception");
+        }
+    }
+}
+ 
+5. Write a program to throw exception with your own message 
+
+class A5 {
+    public static void main(String[] args) {
+        throw new ArithmeticException("Custom Arithmetic Exception Message");
+    }
+}
+ 
+6. Write a program to create your own exception 
+
+class MyException extends Exception {
+    public MyException(String message) {
+        super(message);
+    }
+}
+class A6 {
+    public static void main(String[] args) throws MyException {
+        throw new MyException("My custom exception");
+    }
+}
+ 
+7. Write a program with finally block 
+
+class A7 {
+    public static void main(String[] args) {
+        try {
+            int x = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught");
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+ 
+8. Write a program to generate Arithmetic Exception 
+
+class A8 {
+    public static void main(String[] args) {
+        int x = 10 / 0;
+    }
+}
+ 
+9. Write a program to generate ArrayIndexOutOfBoundException 
+
+class A9 {
+    public static void main(String[] args) {
+        int[] arr = new int[3];
+        System.out.println(arr[5]);
+    }
+}
+ 
+10. Write a program to generate ClassNotFoundException 
+
+class A10 {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class.forName("NonExistentClass");
+    }
+}
+ 
+11. Write a program to generate FileNotFoundException 
+
+import java.io.*;
+class A11 {
+    public static void main(String[] args) throws FileNotFoundException {
+        FileReader fr = new FileReader("nonexistentfile.txt");
+    }
+}
+ 
+12. Write a program to generate IOException 
+
+class A12 {
+    public static void main(String[] args) throws IOException {
+        throw new IOException("IO error");
+    }
+}
+ 
+13. Write a program to generate NoSuchFieldException 
+
+import java.lang.reflect.*;
+class A13 {
+    public static void main(String[] args) throws NoSuchFieldException {
+        Class<A13> clazz = A13.class;
+        Field field = clazz.getField("nonexistentField");
+    }
+}
+ 
+14. Write a program to generate NoSuchMethodException 
+
+class A14 {
+    public static void main(String[] args) throws NoSuchMethodException {
+        Class<A14> clazz = A14.class;
+        clazz.getMethod("nonexistentMethod");
+    }
+}
+ 
+15. Write a program to generate NullPointerException 
+
+class A15 {
+    public static void main(String[] args) {
+        String s = null;
+        System.out.println(s.length());
+    }
+}
+ 
+16. Write a program to generate NumberFormatException 
+
+class A16 {
+    public static void main(String[] args) {
+        int x = Integer.parseInt("abc");
+    }
+}
+ 
+17. Write a program to generate StringIndexOutOfBoundsException 
+
+class A17 {
+    public static void main(String[] args) {
+        String s = "hello";
+        System.out.println(s.charAt(10));
+    }
+}
+ 
+18. Write a program to generate SQLException
+
+import java.sql.*;
+class A18 {
+    public static void main(String[] args) throws SQLException {
+        throw new SQLException("Database error");
+    }
+}
