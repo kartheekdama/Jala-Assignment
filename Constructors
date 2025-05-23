@@ -1,0 +1,134 @@
+1. Write a class with a default constructor, one argument constructor and two argument constructors. Instantiate the class to call all the constructors of that class from a main class 
+
+class MyClass {
+    MyClass() {
+        System.out.println("Default constructor");
+    }
+
+    MyClass(int a) {
+        System.out.println("One-arg constructor: " + a);
+    }
+
+    MyClass(int a, String b) {
+        System.out.println("Two-arg constructor: " + a + ", " + b);
+    }
+}
+
+class Main1 {
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass();
+        MyClass obj2 = new MyClass(10);
+        MyClass obj3 = new MyClass(20, "Hello");
+    }
+}
+
+2. Call the constructors(both default and argument constructors) of super class from a child class 
+
+class Parent {
+    Parent() {
+        System.out.println("Parent default constructor");
+    }
+
+    Parent(int x) {
+        System.out.println("Parent argument constructor: " + x);
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        super();  // calls default constructor of parent
+        System.out.println("Child default constructor");
+    }
+
+    Child(int y) {
+        super(y);  // calls argument constructor of parent
+        System.out.println("Child argument constructor: " + y);
+    }
+}
+
+class Main2 {
+    public static void main(String[] args) {
+        new Child();
+        new Child(100);
+    }
+}
+
+ 
+3. Apply private, public, protected and default access modifiers to the constructor 
+
+class AccessDemo {
+    private AccessDemo() {
+        System.out.println("Private constructor");
+    }
+
+    public AccessDemo(int x) {
+        System.out.println("Public constructor: " + x);
+    }
+
+    protected AccessDemo(String s) {
+        System.out.println("Protected constructor: " + s);
+    }
+
+    AccessDemo(double d) {
+        System.out.println("Default access constructor: " + d);
+    }
+
+    public static void main(String[] args) {
+        new AccessDemo();
+        new AccessDemo(10);
+        new AccessDemo("Hi");
+        new AccessDemo(5.5);
+    }
+}
+
+ 
+4. Write constructors with return type int and String 
+
+class Invalid {
+    // This is NOT a constructor, it's a method
+    int Invalid() {
+        System.out.println("This is a method, not a constructor");
+        return 0;
+    }
+
+    // Valid constructor
+    Invalid() {
+        System.out.println("Valid constructor");
+    }
+
+    public static void main(String[] args) {
+        Invalid obj = new Invalid();
+        obj.Invalid(); // calling method, not constructor
+    }
+}
+
+ 
+5. Try to call the constructor multiple times with the same object 
+
+class Demo {
+    Demo() {
+        System.out.println("Constructor called");
+    }
+
+    public static void main(String[] args) {
+        Demo obj = new Demo();  // constructor called here
+        // obj.Demo();          // ERROR: Cannot explicitly call constructor like a method
+    }
+}
+
+
+class Demo {
+    Demo() {
+        System.out.println("Constructor called");
+    }
+
+    void initAgain() {
+        System.out.println("Simulated constructor call");
+    }
+
+    public static void main(String[] args) {
+        Demo obj = new Demo();
+        obj.initAgain();
+        obj.initAgain();
+    }
+}
