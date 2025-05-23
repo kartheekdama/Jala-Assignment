@@ -1,0 +1,189 @@
+1. Write a function to add integer values of an array 
+
+public static int sumArray(int[] arr) {
+    int sum = 0;
+    for (int num : arr) sum += num;
+    return sum;
+}
+
+ 
+2. Write a function to calculate the average value of an array of integers 
+
+public static double averageArray(int[] arr) {
+    return (double) sumArray(arr) / arr.length;
+}
+
+ 
+3. Write a program to find the index of an array element 
+
+public static int findIndex(int[] arr, int value) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == value) return i;
+    }
+    return -1;
+}
+
+ 
+4. Write a function to test if array contains a specific value 
+
+public static boolean contains(int[] arr, int value) {
+    for (int num : arr) {
+        if (num == value) return true;
+    }
+    return false;
+}
+
+ 
+5. Write a function to remove a specific element from an array 
+
+public static int[] removeElement(int[] arr, int value) {
+    return java.util.Arrays.stream(arr).filter(x -> x != value).toArray();
+}
+
+ 
+6. Write a function to copy an array to another array 
+
+public static int[] copyArray(int[] arr) {
+    return java.util.Arrays.copyOf(arr, arr.length);
+}
+
+ 
+7. Write a function to insert an element at a specific position in the array 
+
+public static int[] insertAt(int[] arr, int index, int value) {
+    int[] result = new int[arr.length + 1];
+    for (int i = 0, j = 0; i < result.length; i++) {
+        if (i == index) result[i] = value;
+        else result[i] = arr[j++];
+    }
+    return result;
+}
+
+ 
+8. Write a function to find the minimum and maximum value of an array 
+
+public static int[] minMax(int[] arr) {
+    int min = arr[0], max = arr[0];
+    for (int num : arr) {
+        if (num < min) min = num;
+        if (num > max) max = num;
+    }
+    return new int[]{min, max};
+}
+
+ 
+9. Write a function to reverse an array of integer values 
+
+public static int[] reverseArray(int[] arr) {
+    int[] reversed = new int[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+        reversed[i] = arr[arr.length - 1 - i];
+    }
+    return reversed;
+}
+
+ 
+10. Write a function to find the duplicate values of an array 
+
+public static java.util.Set<Integer> findDuplicates(int[] arr) {
+    java.util.Set<Integer> seen = new java.util.HashSet<>();
+    java.util.Set<Integer> duplicates = new java.util.HashSet<>();
+    for (int num : arr) {
+        if (!seen.add(num)) duplicates.add(num);
+    }
+    return duplicates;
+}
+
+ 
+11. Write a program to find the common values between two arrays 
+
+public static java.util.Set<Integer> commonElements(int[] arr1, int[] arr2) {
+    java.util.Set<Integer> set1 = new java.util.HashSet<>();
+    for (int num : arr1) set1.add(num);
+    java.util.Set<Integer> common = new java.util.HashSet<>();
+    for (int num : arr2) if (set1.contains(num)) common.add(num);
+    return common;
+}
+
+ 
+12. Write a method to remove duplicate elements from an array 
+
+public static int[] removeDuplicates(int[] arr) {
+    return java.util.Arrays.stream(arr).distinct().toArray();
+}
+
+ 
+13. Write a method to find the second largest number in an array 
+
+public static int secondLargest(int[] arr) {
+    int largest = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+    for (int num : arr) {
+        if (num > largest) {
+            second = largest;
+            largest = num;
+        } else if (num > second && num != largest) {
+            second = num;
+        }
+    }
+    return second;
+}
+
+ 
+14. Write a method to find the second largest number in an array 
+
+public static int secondLargest(int[] arr) {
+    int largest = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+    for (int num : arr) {
+        if (num > largest) {
+            second = largest;
+            largest = num;
+        } else if (num > second && num != largest) {
+            second = num;
+        }
+    }
+    return second;
+}
+
+15. Write a method to find number of even number and odd numbers in an array 
+
+public static int[] countEvenOdd(int[] arr) {
+    int even = 0, odd = 0;
+    for (int num : arr) {
+        if (num % 2 == 0) even++;
+        else odd++;
+    }
+    return new int[]{even, odd};
+}
+
+16. Write a function to get the difference of largest and smallest value 
+
+public static int differenceMinMax(int[] arr) {
+    int[] minMax = minMax(arr);
+    return minMax[1] - minMax[0];
+}
+
+17. Write a method to verify if the array contains two specified elements(12,23) 
+
+public static boolean containsTwo(int[] arr) {
+    boolean has12 = false, has23 = false;
+    for (int num : arr) {
+        if (num == 12) has12 = true;
+        if (num == 23) has23 = true;
+    }
+    return has12 && has23;
+}
+
+18. Write a program to remove the duplicate elements and return the new array 
+
+// Same as #12
+public static int[] removeDuplicatesAgain(int[] arr) {
+    return java.util.Arrays.stream(arr).distinct().toArray();
+}
+
+19. Write a function to find the missing number of sorted array of 1 to 100
+
+public static int findMissingNumber(int[] arr) {
+    int expectedSum = 100 * 101 / 2;
+    int actualSum = sumArray(arr);
+    return expectedSum - actualSum;
+}
