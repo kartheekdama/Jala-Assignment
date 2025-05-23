@@ -1,0 +1,115 @@
+1. Print the fields/instance members of the current class using this and without using object 
+ 
+class CurrentClass {
+    int num = 10;
+    String name = "Current";
+
+    void printFields() {
+        System.out.println("num = " + this.num);
+        System.out.println("name = " + this.name);
+    }
+
+    public static void main(String[] args) {
+        new CurrentClass().printFields();
+    }
+}
+
+2. Print the fields/instance members of the parent class using super 
+
+class Parent {
+    int num = 100;
+    String name = "Parent";
+}
+
+class Child extends Parent {
+    int num = 10;
+    String name = "Child";
+
+    void printParentFields() {
+        System.out.println("num = " + super.num);
+        System.out.println("name = " + super.name);
+    }
+
+    public static void main(String[] args) {
+        new Child().printParentFields();
+    }
+}
+
+ 
+3. Call constructor of the current class using this() 
+
+class MyClass {
+    MyClass() {
+        System.out.println("No-arg constructor");
+    }
+
+    MyClass(int x) {
+        this();  // call no-arg constructor
+        System.out.println("Constructor with arg: " + x);
+    }
+
+    public static void main(String[] args) {
+        new MyClass(5);
+    }
+}
+
+output:
+No-arg constructor
+Constructor with arg: 5
+
+ 
+4. Call argument constructor of current class using this() 
+
+class MyClass2 {
+    MyClass2(int x) {
+        System.out.println("Constructor with arg: " + x);
+    }
+
+    MyClass2() {
+        this(10);  // call constructor with argument
+        System.out.println("No-arg constructor");
+    }
+
+    public static void main(String[] args) {
+        new MyClass2();
+    }
+}
+
+output:
+Constructor with arg: 10
+No-arg constructor
+
+ 
+5. Call constructor of the parent class using super() 
+
+class ParentClass {
+    ParentClass() {
+        System.out.println("Parent constructor");
+    }
+}
+
+class ChildClass extends ParentClass {
+    ChildClass() {
+        super();  // call parent constructor
+        System.out.println("Child constructor");
+    }
+
+    public static void main(String[] args) {
+        new ChildClass();
+    }
+}
+
+Output:
+Parent constructor
+Child constructor
+
+ 
+6. Use this() and super() in methods not in constructors
+
+class Test {
+    void method() {
+        // this(); // Not allowed - compilation error
+        // super(); // Not allowed - compilation error
+    }
+}
+
